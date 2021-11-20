@@ -1,0 +1,27 @@
+<div class="container my-2">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>People's Wishes</h2>
+            <ul *ngFor="let wish of wishes">
+                 <app-wish-layout [wish]="wish"></app-wish-layout>
+            </ul>
+
+            <div class="container">
+                <div class="container">
+                    <div class="alert alert-info">
+                        <strong>No Wishes yet! Create Yours</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <div class="container">
+        <div class="alert alert-info">
+            <strong>No Wishes yet! Create Yours</strong>
+        </div>
+    </div>
+</div> -->

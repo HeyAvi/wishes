@@ -1,0 +1,35 @@
+<div class="container my-2">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>What's your wish?</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card my-5 mx-5">
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" [(ngModel)]="name" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" [(ngModel)]="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        name="email">
+                    <div id="emailHelp" class="form-text">Enter your email, so that we can reach you</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wish">Wish</label>
+                    <textarea class="form-control" id="wish" [(ngModel)]="wish" name="wish" rows="3"
+                        aria-describedby="wishHelp"></textarea>
+                    <div id="wishHelp" class="form-text">Everyone can see your wish!</div>
+                </div>
+                <button type="submit" class="btn btn-primary my-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<app-wish-section [wishes]="wishes" ></app-wish-section>

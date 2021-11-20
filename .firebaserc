@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "wish-everyone": {
+      "hosting": {
+        "wishes": [
+          "wish-everyone"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "wish-everyone"
+  }
+}
