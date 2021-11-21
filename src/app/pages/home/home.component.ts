@@ -11,15 +11,12 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 export class HomeComponent implements OnInit {
 
   wishes: any[];
+  wishLength: number;
   email: string;
   name: string;
   wish: string;
 
   constructor(private db: AngularFireDatabase) {
-    db.list('/Wishes').valueChanges().subscribe(wishes => {
-      this.wishes = wishes;
-      console.log(this.wishes);
-    });
   }
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Wish } from 'src/app/datamodel';
 
 @Component({
@@ -7,9 +8,14 @@ import { Wish } from 'src/app/datamodel';
   styleUrls: ['./wish-section.component.css']
 })
 export class WishSectionComponent implements OnInit {
-  @Input() wishes: Wish[];
+  wishes: any[];
 
-  constructor() {
+  @ViewChild('noData') myDiv: ElementRef;
+
+  constructor(private db: AngularFireDatabase) {
+    db.list('/Wishes').valueChanges().subscribe(wishes => {
+      this.wishes = wishes;
+    });
   }
 
   ngOnInit(): void {
